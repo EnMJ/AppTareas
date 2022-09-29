@@ -1,10 +1,28 @@
+import Button from "./Button"
 
-const Header = (props) => {
+const Header = ({titulo, onAdd, mostrarForm}) => {
+
+  const onClick =() =>{
+    console.log('click')
+  }
+
+ 
   return (
-    <header>
-        <h1>{props.titulo}</h1>
+    <header className = 'header'>
+        <h1>{titulo}</h1>
+        <Button texto={mostrarForm ? 'Cancelar' : 'Agregar'} color={mostrarForm ? 'red' : 'green'} onClick={onAdd}/>
+        
     </header>
   )
 }
+
+Header.defaultProps ={
+    titulo:'Tareas'
+}
+
+// const estiloEncabezado ={
+//   color:'red',
+//   backgroundColor:'black' 
+// }
 
 export default Header
